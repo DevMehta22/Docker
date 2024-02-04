@@ -1,11 +1,15 @@
-version: '3'
+version: "3"
 services:
   node-app:
     build: .
     ports:
       - "3000:3000"
-    volumes:
-      - ./:/usr/nodeapp
     environment:
       - PORT=3000
-    
+
+  mymongo:
+    image: "mongo"
+    volumes:
+      -  mongo-db:/data/db
+volumes:
+  mongo-db:
