@@ -11,4 +11,4 @@ RUN if [ "$NODE_ENV" = "development" ]; then \
         npm install --only production; \
     fi
 COPY ./ ./
-CMD ["node","index.js"]
+CMD ["node","server.js"]
