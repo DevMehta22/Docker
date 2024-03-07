@@ -6,10 +6,16 @@ services:
       - "3000:3000"
     environment:
       - PORT=3000
+    depends_on:
+      - mongo
 
-  mymongo:
-    image: "mongo"
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dev
+      - MONGO_INITDB_ROOT_PASSWORD=devpass123
     volumes:
       -  mongo-db:/data/db
 volumes:
   mongo-db:
+
